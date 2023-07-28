@@ -69,8 +69,33 @@
             },
             "parameters": {
               "emailMessage/To": "t-kaku@alterbooth.com",
-              "emailMessage/Subject": "Fusion_test",
+              "emailMessage/Subject": "Fusion_test V1.0.1.0",
               "emailMessage/Body": "<p>環境 URL　Tadashi Kaku's Environment<br>\norg0c7e17d2.crm.dynamics.com<br>\n</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "メールの送信_(V2)_2": {
+          "runAfter": {
+            "メールの送信_(V2)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8c887c15-4668-444f-9832-0a6c1f471058"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "t-kaku@alterbooth.com",
+              "emailMessage/Subject": "Fusion_test V1.0.2.0",
+              "emailMessage/Body": "<p>環境 URL　Tadashi Kaku's Environment<br>\norg0c7e17d2.crm.dynamics.com</p>",
               "emailMessage/Importance": "Normal"
             },
             "authentication": "@parameters('$authentication')"
